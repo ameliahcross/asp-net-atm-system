@@ -1,0 +1,86 @@
+﻿@model Application.Viewmodels.WithdrawViewModel
+
+@{
+    ViewData["Title"] = "Withdrawal";
+}
+
+<div class="text-center">
+    <i class="fas fa-university fa-4x text-success"></i>
+    <h2 class="text-success">ATM</h2>
+    <h3 class="text-center mt-2 display-4">¡Retiro exitoso!</h3>
+    <h6 class="mt-5">Por un monto de: </h6>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-5">
+            <div class="card bg-success text-white">
+                <div class="card-body">
+                    <p class="card-text display-4 text-center">
+                        $@ViewBag.Amount
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h6 class="text-center mt-5">El modo de dispensación <span class="text-primary">@ViewBag.Dispensation</span>, ha dispensado:</h6>
+    <div class="row justify-content-center my-3">
+        <div class="col-5 mx-5">
+            <table class="table table-striped text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">Denominaciones</th>
+                        <th scope="col">Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        if (@ViewBag.CountOf100 != 0)
+                        {
+                            <tr>
+                                <td>$100</td>
+                                <td>@ViewBag.CountOf100</td>
+                            </tr>
+                        }
+                    }
+                    @{
+                        if (@ViewBag.CountOf200 != 0)
+                        {
+                            <tr>
+                                <td>$200</td>
+                                <td>@ViewBag.CountOf200</td>
+                            </tr>
+                        }
+                    }
+                    @{
+                        if (@ViewBag.CountOf500 != 0)
+                        {
+                            <tr>
+                                <td>$500</td>
+                                <td>@ViewBag.CountOf500</td>
+                            </tr>
+                        }
+                    }
+                    @{
+                        if (@ViewBag.CountOf1000 != 0)
+                        {
+                            <tr>
+                                <td>$1000</td>
+                                <td>@ViewBag.CountOf1000</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <hr class="mt-5" />
+    <div class="row">
+        <div class="col text-end d-flex justify-content-center">
+            <a asp-action="DispenseMode" asp-controller="Atm" asp-route-amount="@ViewBag.Amount" asp-route-dispenseMode="@ViewBag.Selection.DispenseMode" class="btn btn-secondary mx-2">Regresar</a>
+            <a href="@Url.Action("Index", "Atm")" class="btn btn-primary">Realizar otro retiro</a>
+        </div>
+    </div>
+</div>
+
+

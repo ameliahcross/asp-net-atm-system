@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cajero_MVC", "Cajero_MVC\Cajero_MVC.csproj", "{6F8F4DAE-62E3-442F-B506-6BEC0E8077CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{635AB25B-C59A-49A3-93F4-B45DA7C570E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F8F4DAE-62E3-442F-B506-6BEC0E8077CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F8F4DAE-62E3-442F-B506-6BEC0E8077CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F8F4DAE-62E3-442F-B506-6BEC0E8077CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F8F4DAE-62E3-442F-B506-6BEC0E8077CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{635AB25B-C59A-49A3-93F4-B45DA7C570E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{635AB25B-C59A-49A3-93F4-B45DA7C570E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{635AB25B-C59A-49A3-93F4-B45DA7C570E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{635AB25B-C59A-49A3-93F4-B45DA7C570E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3716A426-900E-415A-AB55-109F98DCB7DA}
+	EndGlobalSection
+EndGlobal

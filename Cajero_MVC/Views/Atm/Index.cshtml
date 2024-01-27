@@ -1,0 +1,25 @@
+﻿@model Application.Viewmodels.WithdrawViewModel
+@{
+    ViewData["Title"] = "ATM Home";
+}
+<div class="text-center">
+    <i class="fas fa-university fa-4x text-success"></i>
+    <h2 class="text-success">ATM</h2>
+    <h1 class="display-4">¡Bienvenido/a!</h1>
+    <h6 class="text-center mt-5">Ingrese la cantidad a retirar:</h6>
+</div>
+
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <form method="post" asp-controller="Atm" asp-action="getAmount">
+            <div class="input-group w-auto mt-2">
+                <input asp-for="Amount" class="form-control" placeholder="Ej.: 1000" aria-label="Example input" />
+                <button class="btn btn-success" type="submit" id="btn-siguiente" data-mdb-ripple-color="dark">
+                    Siguiente
+                </button>
+            </div>
+        </form>
+    </div>
+    <p class="text-center text-danger mt-2">@ViewBag.Error</p>
+</div>
+

@@ -1,0 +1,93 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {
+      "Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Application.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Application/1.0.0": {
+      "type": "project",
+      "path": "../Application/Application.csproj",
+      "msbuildProject": "../Application/Application.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0": [
+      "Application >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/Users/oriontekdesign/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/Amelia/repos/Cajero_MVC/Cajero_MVC/Cajero_MVC.csproj",
+      "projectName": "Cajero_MVC",
+      "projectPath": "/Users/Amelia/repos/Cajero_MVC/Cajero_MVC/Cajero_MVC.csproj",
+      "packagesPath": "/Users/oriontekdesign/.nuget/packages/",
+      "outputPath": "/Users/Amelia/repos/Cajero_MVC/Cajero_MVC/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/oriontekdesign/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "/usr/local/share/dotnet/sdk/7.0.308/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {
+            "/Users/Amelia/repos/Cajero_MVC/Application/Application.csproj": {
+              "projectPath": "/Users/Amelia/repos/Cajero_MVC/Application/Application.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.308/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

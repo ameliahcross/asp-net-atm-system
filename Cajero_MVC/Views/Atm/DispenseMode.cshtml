@@ -1,0 +1,76 @@
+﻿@model Application.Viewmodels.WithdrawViewModel
+@{
+    ViewData["Title"] = "Dispense Mode";
+}
+
+<div class="text-center">
+    <i class="fas fa-university fa-4x text-success"></i>
+    <h2 class="text-success">ATM</h2>
+    <h3 class="display-4">Dispensación</h3>
+    <div class="text-center mt-5">
+        <div class="alert alert-info" role="alert">
+            * El <strong>modo eficiente</strong>  utiliza menos papeletas, con denominaciones de: 100, 200, 500 y 1000
+        </div>
+            @{
+                if (Model != null)
+                {
+                    <h3>Cantidad a retirar: <span class="text-success"> $@Model.Amount</span></h3>
+                }
+                else
+                {
+                    <h3>Cantidad a retirar: <span class="text-success"> $@ViewBag.Amount</span></h3>
+                }
+            }
+    </div>
+    <h6 class="text-center mt-5">Seleccione el modo de dispensación de billetes:</h6>
+</div>
+
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <form asp-controller="Atm" asp-action="Withdrawal" method="post">
+            <div class="input-group w-auto mt-2">
+                <select asp-for="DispenseMode" class="form-select" aria-label="Default select example">
+                    <!-- IF que evalúa que si "Model no es nulo, a value, se le asigne el valor que contenga Amount de ""Model-->
+                    @{
+                        if (Model != null)
+                        {
+                            switch ((Model.DispenseMode))
+                            {
+                                case "0":
+                                    <option value="0" selected>Solo papeletas de $200 y $1000</option>
+                                    <option value="1">Solo papeletas de $100 y $500</option>
+                                    <option value="2">Modo eficiente</option>
+                                    break;
+                                case "1":
+                                    <option value="0">Solo papeletas de $200 y $1000</option>
+                                    <option value="1" selected>Solo papeletas de $100 y $500</option>
+                                    <option value="2">Modo eficiente</option>
+                                    break;
+                                case "2":
+                                    <option value="0">Solo papeletas de $200 y $1000</option>
+                                    <option value="1">Solo papeletas de $100 y $500</option>
+                                    <option value="2" selected>Modo eficiente</option>
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            <option value="0">Solo papeletas de $200 y $1000</option>
+                            <option value="1">Solo papeletas de $100 y $500</option>
+                            <option value="2" selected>Modo eficiente</option>
+                        }
+                    }
+                </select>
+                <!-- Input oculto con el fin de alojar el monto en "Amount" -->
+                <input type="hidden" asp-for="Amount"/>
+                <button class="btn btn-primary" type="submit" id="btn-retirar">
+                    Retirar
+                    <i class="fas fa-hand-holding-usd"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
